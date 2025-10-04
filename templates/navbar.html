@@ -41,8 +41,8 @@
                     <p><a href="{{url_for('global_reach')}}" class="text-sm/6 font-semibold text-gray-900">Global Reach</a></p>
                     <p><a href="#" class="text-sm/6 font-semibold text-gray-900">Raising Awareness</a></p>
                     <p><a href="#" class="text-sm/6 font-semibold text-gray-900">Understanding the Issue</a></p>
-                    <p><a href="#" class="text-sm/6 font-semibold text-gray-900">What You Can Do</a>
-                </div></p>
+                    <p><a href="#" class="text-sm/6 font-semibold text-gray-900">What You Can Do</a></p>
+                </div>
                
               </div>
             </div>
@@ -50,3 +50,63 @@
         </div>
       </dialog>
     </el-dialog>
+
+<script>
+(function () {
+  // Select button via your custom attributes
+  const openBtn  = document.querySelector('button[command="show-modal"][commandfor="mobile-menu"]');
+  const dialog   = document.getElementById('mobile-menu');
+  const closeBtn = dialog ? dialog.querySelector('button[command="close"]') : null;
+
+  if (!openBtn || !dialog) return;
+
+  const supportsDialog = typeof window.HTMLDialogElement === 'function' && typeof dialog.showModal === 'function';
+
+  function lockScroll() {
+    // optional: keep background from scrolling on mobile
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function unlockScroll() {
+    document.body.style.overflow = ''
+    document.documentElement.style.overflow = ''
+  }
+
+  function openMenu(e) {
+    e && e.preventDefault();
+    if (supportsDialog) {
+      dialog.showModal()
+    } else {
+      dialog.style.display = 'block'
+    }
+    lockScroll()
+  }
+
+  function closeMenu(e) {
+    e && e.preventDefault()
+    if (supportsDialog) {
+      dialog.close()
+    } else {
+      dialog.style.display = 'none'
+    }
+    unlockScroll()
+  }
+
+  ['click','touchstart'].forEach(evt => {
+    openBtn.addEventListener(evt, openMenu, { passive: false })
+  })
+
+  if (closeBtn) {
+    ['click','touchstart'].forEach(evt => {
+      closeBtn.addEventListener(evt, closeMenu, { passive: false })
+    })
+  }
+
+  if (supportsDialog) {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) closeMenu(e)
+    })
+    dialog.addEventListener('cancel', (e) => { e.preventDefault(); closeMenu(e); })
+  }
+})()
+</script>
