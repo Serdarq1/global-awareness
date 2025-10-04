@@ -1,0 +1,148 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+<!-- Awareness & Action Page -->
+<main class="min-h-screen bg-gray-50">
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 py-12 lg:py-16">
+      <div class="grid gap-8 lg:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            End Sexual Violence: Awareness & Action
+          </h1>
+          <p class="mt-3 max-w-2xl text-gray-600">
+            Data can inform policy and protect people. This page explains the issue, highlights
+            key facts from the dataset, and shares practical steps for safety, support, and prevention.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <a href="/" class="inline-flex items-center rounded-xl bg-purple-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-gray-900/30">Explore the data</a>
+            <a href="#help" class="inline-flex items-center rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900/10">Get help</a>
+          </div>
+        </div>
+        <div class="lg:justify-self-end">
+          <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-5 shadow-sm w-full max-w-md">
+            <h2 class="text-sm font-medium text-gray-700">Key facts (latest year)</h2>
+            <dl class="mt-4 grid grid-cols-2 gap-4 text-sm">
+              <div class="rounded-xl bg-gray-50 p-3">
+                <dt class="text-gray-600">Latest year</dt>
+                <dd id="stat-year" class="mt-1 font-semibold text-gray-900">—</dd>
+              </div>
+              <div class="rounded-xl bg-gray-50 p-3">
+                <dt class="text-gray-600">Countries reporting</dt>
+                <dd id="stat-countries" class="mt-1 font-semibold text-gray-900">—</dd>
+              </div>
+              <div class="rounded-xl bg-gray-50 p-3">
+                <dt class="text-gray-600">Avg rate / 100k</dt>
+                <dd id="stat-avg" class="mt-1 font-semibold text-gray-900">—</dd>
+              </div>
+              <div class="rounded-xl bg-gray-50 p-3">
+                <dt class="text-gray-600">Highest rate</dt>
+                <dd class="mt-1 font-semibold text-gray-900"><span id="stat-top-val">—</span> <span id="stat-top-name" class="block text-xs text-gray-600"></span></dd>
+              </div>
+            </dl>
+            <p class="mt-3 text-xs text-gray-500">Notes: averages are unweighted across reporting countries in the latest year available via the dataset.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-12">
+    <div class="grid gap-8 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <h2 class="text-xl font-semibold text-gray-900">Awareness: know, notice, act</h2>
+        <ul class="mt-4 space-y-3 text-gray-700 list-disc pl-5">
+          <li><span class="font-medium">Understand the data:</span> reporting varies by country and year; trends matter more than single-year spikes.</li>
+          <li><span class="font-medium">Recognize warning signs:</span> sudden isolation, fear, controlling behavior, unexplained injuries, or withdrawal can be red flags.</li>
+          <li><span class="font-medium">Support survivors:</span> believe them, ensure safety, offer choices, and connect them with professional help.</li>
+          <li><span class="font-medium">Challenge myths:</span> sexual violence is never the survivor’s fault—consent must be enthusiastic, informed, and ongoing.</li>
+        </ul>
+      </div>
+      <aside class="rounded-2xl bg-white ring-1 ring-gray-200 p-5 shadow-sm">
+        <h3 class="text-sm font-medium text-gray-700">If you’re in immediate danger</h3>
+        <p class="mt-2 text-sm text-gray-700">Use local emergency services. If safe, document incidents and seek medical care. Consider reaching out to a trusted person or a professional hotline.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 pb-4">
+    <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-6 shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-900">Bystander intervention (the 5 D’s)</h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Direct</h4><p class="mt-1 text-sm text-gray-700">Address the behavior if safe: “That’s not okay.”</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Distract</h4><p class="mt-1 text-sm text-gray-700">Create a diversion: ask for directions, spill a drink, interrupt.</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Delegate</h4><p class="mt-1 text-sm text-gray-700">Get help from staff, security, or trusted authorities.</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Delay</h4><p class="mt-1 text-sm text-gray-700">Check in afterwards: “Are you okay? How can I help?”</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Document</h4><p class="mt-1 text-sm text-gray-700">If safe and legal, record details; share only with consent.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-8">
+    <div class="grid gap-6 md:grid-cols-2">
+      <details class="rounded-xl bg-white p-5 ring-1 ring-gray-200 shadow-sm group open:shadow-md">
+        <summary class="cursor-pointer select-none text-sm font-semibold text-gray-900">Myth: Most assaults involve strangers</summary>
+        <p class="mt-2 text-sm text-gray-700">Fact: Many incidents involve someone known to the survivor (partner, acquaintance, colleague). Awareness helps us support boundaries and consent in all contexts.</p>
+      </details>
+      <details class="rounded-xl bg-white p-5 ring-1 ring-gray-200 shadow-sm group open:shadow-md">
+        <summary class="cursor-pointer select-none text-sm font-semibold text-gray-900">Myth: Alcohol causes sexual violence</summary>
+        <p class="mt-2 text-sm text-gray-700">Fact: Intoxication may be a factor, but responsibility always lies with the person who commits harm. Consent cannot be given when incapacitated.</p>
+      </details>
+      <details class="rounded-xl bg-white p-5 ring-1 ring-gray-200 shadow-sm group open:shadow-md">
+        <summary class="cursor-pointer select-none text-sm font-semibold text-gray-900">Myth: Clothing or behavior invites violence</summary>
+        <p class="mt-2 text-sm text-gray-700">Fact: No outfit or behavior justifies violence. The only cause of sexual violence is the person who chooses to commit it.</p>
+      </details>
+      <details class="rounded-xl bg-white p-5 ring-1 ring-gray-200 shadow-sm group open:shadow-md">
+        <summary class="cursor-pointer select-none text-sm font-semibold text-gray-900">Myth: False reports are common</summary>
+        <p class="mt-2 text-sm text-gray-700">Fact: False reporting is rare. Survivors face many barriers to disclosure; believing and supporting them is critical.</p>
+      </details>
+    </div>
+  </section>
+
+  {% include 'help.html' %}
+
+  
+<script>
+  window.API_BASE = window.API_BASE || "{{ api_base|default('') }}";
+
+  async function _loadRates(params = {}) {
+    const qs = new URLSearchParams(params).toString();
+    const res = await fetch(`${API_BASE}/rates${qs ? `?${qs}` : ''}`);
+    if (!res.ok) throw new Error('Failed to load rates');
+    return res.json();
+  }
+  async function _loadTop(n = 1) {
+    const res = await fetch(`${API_BASE}/top?n=${encodeURIComponent(n)}`);
+    if (!res.ok) throw new Error('Failed to load top');
+    return res.json();
+  }
+
+  (function initAwarenessPage(){
+    const elYear   = document.getElementById('stat-year');
+    const elN      = document.getElementById('stat-countries');
+    const elAvg    = document.getElementById('stat-avg');
+    const elTopVal = document.getElementById('stat-top-val');
+    const elTopNam = document.getElementById('stat-top-name');
+
+    (async () => {
+      try {
+        const { year, results } = await _loadRates();
+        const vals = results.map(r => Number(r.value)).filter(Number.isFinite)
+        const avg  = vals.length ? (vals.reduce((a,b)=>a+b,0) / vals.length) : NaN
+        if (elYear) elYear.textContent = year ?? '—';
+        if (elN)    elN.textContent    = results.length.toString();
+        if (elAvg)  elAvg.textContent  = Number.isFinite(avg) ? avg.toFixed(2) : '—'
+
+        const top = await _loadTop(1);
+        const t = Array.isArray(top.results) && top.results[0] ? top.results[0] : null
+        if (t) {
+          elTopVal.textContent = Number.isFinite(Number(t.rate_per_100k)) ? Number(t.rate_per_100k).toFixed(2) : '—'
+          elTopNam.textContent = t.country || ''
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    })();
+  })();
+</script>

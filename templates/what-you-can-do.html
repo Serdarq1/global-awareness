@@ -1,0 +1,139 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+<main class="min-h-screen bg-gray-50">
+  <section class="border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 py-12 lg:py-16">
+      <nav class="text-sm text-gray-500" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li aria-hidden="true" class="text-gray-400">/</li>
+          <li class="text-gray-700 font-medium">What You Can Do</li>
+        </ol>
+      </nav>
+      <div class="mt-6 grid gap-8 lg:grid-cols-2 items-start">
+        <div>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What You Can Do</h1>
+          <p class="mt-3 max-w-2xl text-gray-600">Practical steps for individuals, friends, workplaces, and communities—to prevent harm, support survivors, and strengthen safety.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="{{url_for('the_issue')}}" class="inline-flex items-center rounded-xl border border-gray-300 bg-purple-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-400">Understanding the Issue</a>
+          </div>
+        </div>
+        <aside class="lg:justify-self-end w-full">
+          <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-5 shadow-sm w-full">
+            <h2 class="text-sm font-medium text-gray-700">Latest-year snapshot</h2>
+            <dl class="mt-4 grid grid-cols-2 gap-4 text-sm">
+              <div class="rounded-xl bg-gray-50 p-3">
+                <dt class="text-gray-600">Latest year</dt>
+                <dd id="a-year" class="mt-1 font-semibold text-gray-900">—</dd>
+              </div>
+              <div class="rounded-xl bg-gray-50 p-3">
+                <dt class="text-gray-600">Highest rate</dt>
+                <dd class="mt-1 font-semibold text-gray-900"><span id="a-top-val">—</span> <span id="a-top-name" class="block text-xs text-gray-600"></span></dd>
+              </div>
+            </dl>
+            <p class="mt-3 text-xs text-gray-500">Use this snapshot to guide targeted awareness and prevention efforts.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-12">
+    <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-6 shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-900">If you experienced sexual violence</h2>
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Safety first</h3>
+          <p class="mt-1 text-sm text-gray-700">If you are in immediate danger, call local emergency services. Get to a safe place if possible.</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Medical & evidence</h3>
+          <p class="mt-1 text-sm text-gray-700">If safe, seek medical care. Consider a forensic exam where available. Evidence collection has time windows; ask local providers.</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Support & options</h3>
+          <p class="mt-1 text-sm text-gray-700">Consider reaching out to a trusted person or a hotline. You are in control: choose what steps feel right to you.</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Documentation</h3>
+          <p class="mt-1 text-sm text-gray-700">Save messages, photos, dates, locations if it feels safe. Decide later how you want to use them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 pb-12">
+    <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-6 shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-900">If you are supporting someone</h2>
+      <div class="mt-4 grid gap-6 md:grid-cols-3">
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Believe & validate</h3>
+          <p class="mt-1 text-sm text-gray-700">Say: “I’m sorry this happened. I believe you. It’s not your fault.”</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Offer choices</h3>
+          <p class="mt-1 text-sm text-gray-700">Ask what they need. Offer options (medical, legal, counseling) without pressure.</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-4">
+          <h3 class="font-medium">Respect privacy</h3>
+          <p class="mt-1 text-sm text-gray-700">Keep information confidential unless there’s immediate danger or you have a duty to report.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 pb-12">
+    <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-6 shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-900">Bystander skills (5 D’s)</h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Direct</h4><p class="mt-1 text-sm text-gray-700">Address the behavior if safe.</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Distract</h4><p class="mt-1 text-sm text-gray-700">Create a diversion.</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Delegate</h4><p class="mt-1 text-sm text-gray-700">Get help from staff or authorities.</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Delay</h4><p class="mt-1 text-sm text-gray-700">Check in afterwards.</p></div>
+        <div class="rounded-xl bg-gray-50 p-4"><h4 class="font-medium">Document</h4><p class="mt-1 text-sm text-gray-700">Record details if safe and legal.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 pb-12">
+    <div class="rounded-2xl bg-white ring-1 ring-gray-200 p-6 shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-900">Workplace / School actions</h2>
+      <ul class="mt-3 list-disc pl-5 text-sm text-gray-700 space-y-1">
+        <li>Clear policies, reporting channels, and anti-retaliation protections.</li>
+        <li>Regular training on consent, boundaries, and bystander intervention.</li>
+        <li>Confidential support and accommodations for survivors.</li>
+      </ul>
+    </div>
+  </section>
+
+  {% include 'help.html' %}
+
+<script>
+  window.API_BASE = window.API_BASE || "{{ api_base|default('') }}";
+
+  async function _loadTop(n = 1) {
+    const res = await fetch(`${API_BASE}/top?n=${encodeURIComponent(n)}`);
+    if (!res.ok) throw new Error('Failed to load top');
+    return res.json();
+  }
+
+  (function initActions(){
+    const y  = document.getElementById('a-year');
+    const tv = document.getElementById('a-top-val');
+    const tn = document.getElementById('a-top-name');
+
+    (async ()=>{
+      try {
+        const top = await _loadTop(1);
+        if (y) y.textContent = top?.year ?? '—'
+        const t = Array.isArray(top.results) && top.results[0] ? top.results[0] : null
+        if (t) {
+          tv.textContent = Number.isFinite(Number(t.rate_per_100k)) ? Number(t.rate_per_100k).toFixed(2) : '—'
+          tn.textContent = t.country || ''
+        }
+      } catch (e) { console.error(e) }
+    })()
+  })()
+</script>
